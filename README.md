@@ -1,6 +1,6 @@
 # LATTICE
 
-An adaptive practice platform for Data Structures and Algorithms. You solve coding problems in the
+Lattice is an adaptive practice platform for Data Structures and Algorithms. You solve coding problems in the
 browser, get instant feedback, and the app keeps track of how well you know each underlying skill so
 it can point you toward what to practice next.
 
