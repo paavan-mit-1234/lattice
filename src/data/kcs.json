@@ -1,0 +1,492 @@
+[
+{
+"slug": "arrays/indexing",
+"title": "Array indexing",
+"category": "Arrays",
+"depth": 0,
+"blurb": "Read and write by position; bounds."
+},
+{
+"slug": "arrays/iterate",
+"title": "Array iteration",
+"category": "Arrays",
+"depth": 0,
+"blurb": "Single linear pass."
+},
+{
+"slug": "arrays/prefix-sum",
+"title": "Prefix sums",
+"category": "Arrays",
+"depth": 1,
+"blurb": "Running aggregates for range queries."
+},
+{
+"slug": "arrays/in-place",
+"title": "In-place mutation",
+"category": "Arrays",
+"depth": 1,
+"blurb": "Rearrange without extra space."
+},
+{
+"slug": "arrays/kadane",
+"title": "Kadane / running best",
+"category": "Arrays",
+"depth": 2,
+"blurb": "Best running subarray."
+},
+{
+"slug": "strings/traverse",
+"title": "String traversal",
+"category": "Strings",
+"depth": 0,
+"blurb": "Scan characters."
+},
+{
+"slug": "strings/build",
+"title": "String building",
+"category": "Strings",
+"depth": 1,
+"blurb": "Assemble output efficiently."
+},
+{
+"slug": "strings/palindrome",
+"title": "Palindrome logic",
+"category": "Strings",
+"depth": 1,
+"blurb": "Symmetry checks."
+},
+{
+"slug": "strings/parsing",
+"title": "Parsing",
+"category": "Strings",
+"depth": 2,
+"blurb": "Tokenize and interpret."
+},
+{
+"slug": "hashing/frequency",
+"title": "Hash frequency",
+"category": "Hashing",
+"depth": 1,
+"blurb": "Count with a dict."
+},
+{
+"slug": "hashing/lookup",
+"title": "Hash lookup",
+"category": "Hashing",
+"depth": 1,
+"blurb": "O(1) membership and recall."
+},
+{
+"slug": "hashing/set-dedup",
+"title": "Set dedup",
+"category": "Hashing",
+"depth": 1,
+"blurb": "Uniqueness with a set."
+},
+{
+"slug": "hashing/grouping",
+"title": "Hash grouping",
+"category": "Hashing",
+"depth": 2,
+"blurb": "Bucket by computed key."
+},
+{
+"slug": "two-pointers/convergent",
+"title": "Convergent pointers",
+"category": "Two Pointers",
+"depth": 1,
+"blurb": "Close inward."
+},
+{
+"slug": "two-pointers/partition",
+"title": "Partitioning",
+"category": "Two Pointers",
+"depth": 2,
+"blurb": "Split by predicate in place."
+},
+{
+"slug": "two-pointers/fast-slow",
+"title": "Fast / slow",
+"category": "Two Pointers",
+"depth": 2,
+"blurb": "Two speeds over a sequence."
+},
+{
+"slug": "sliding-window/fixed",
+"title": "Fixed window",
+"category": "Sliding Window",
+"depth": 2,
+"blurb": "Constant-size window."
+},
+{
+"slug": "sliding-window/expand",
+"title": "Window expand",
+"category": "Sliding Window",
+"depth": 2,
+"blurb": "Grow a window."
+},
+{
+"slug": "sliding-window/shrink",
+"title": "Window shrink",
+"category": "Sliding Window",
+"depth": 3,
+"blurb": "Contract on constraint."
+},
+{
+"slug": "sliding-window/distinct",
+"title": "Distinct window",
+"category": "Sliding Window",
+"depth": 3,
+"blurb": "Track contents with a map."
+},
+{
+"slug": "binary-search/boundary",
+"title": "Binary search boundary",
+"category": "Binary Search",
+"depth": 2,
+"blurb": "Halve with correct edges."
+},
+{
+"slug": "binary-search/insert",
+"title": "Search insert",
+"category": "Binary Search",
+"depth": 2,
+"blurb": "Lower bound position."
+},
+{
+"slug": "binary-search/on-answer",
+"title": "Binary search on answer",
+"category": "Binary Search",
+"depth": 3,
+"blurb": "Search the value space."
+},
+{
+"slug": "binary-search/rotated",
+"title": "Rotated search",
+"category": "Binary Search",
+"depth": 3,
+"blurb": "Pivoted sorted array."
+},
+{
+"slug": "stack/lifo",
+"title": "Stack (LIFO)",
+"category": "Stack",
+"depth": 1,
+"blurb": "Push and pop."
+},
+{
+"slug": "stack/expression",
+"title": "Expression eval",
+"category": "Stack",
+"depth": 2,
+"blurb": "Evaluate with a stack."
+},
+{
+"slug": "stack/monotonic",
+"title": "Monotonic stack",
+"category": "Stack",
+"depth": 3,
+"blurb": "Maintain a sorted stack."
+},
+{
+"slug": "queue/fifo",
+"title": "Queue (FIFO)",
+"category": "Queue",
+"depth": 1,
+"blurb": "First in first out."
+},
+{
+"slug": "queue/monotonic",
+"title": "Monotonic deque",
+"category": "Queue",
+"depth": 3,
+"blurb": "Sliding extremes."
+},
+{
+"slug": "linked-list/traverse",
+"title": "List traversal",
+"category": "Linked List",
+"depth": 1,
+"blurb": "Walk a sequence."
+},
+{
+"slug": "linked-list/two-pointer",
+"title": "List two-pointer",
+"category": "Linked List",
+"depth": 2,
+"blurb": "Offset pointers."
+},
+{
+"slug": "linked-list/merge",
+"title": "Merge lists",
+"category": "Linked List",
+"depth": 2,
+"blurb": "Combine sorted runs."
+},
+{
+"slug": "trees/dfs",
+"title": "Tree DFS",
+"category": "Trees",
+"depth": 2,
+"blurb": "Recurse over a tree."
+},
+{
+"slug": "trees/bfs",
+"title": "Tree BFS",
+"category": "Trees",
+"depth": 3,
+"blurb": "Level-order traversal."
+},
+{
+"slug": "trees/bst",
+"title": "Binary search tree",
+"category": "Trees",
+"depth": 3,
+"blurb": "Ordered tree invariant."
+},
+{
+"slug": "trees/path",
+"title": "Tree paths",
+"category": "Trees",
+"depth": 3,
+"blurb": "Reason along root-to-leaf."
+},
+{
+"slug": "heap/top-k",
+"title": "Heap top-k",
+"category": "Heap",
+"depth": 3,
+"blurb": "Maintain k extremes."
+},
+{
+"slug": "heap/k-way",
+"title": "K-way merge",
+"category": "Heap",
+"depth": 4,
+"blurb": "Merge many sorted runs."
+},
+{
+"slug": "graph/adjacency",
+"title": "Adjacency model",
+"category": "Graphs",
+"depth": 2,
+"blurb": "Represent edges."
+},
+{
+"slug": "graph/bfs",
+"title": "Graph BFS",
+"category": "Graphs",
+"depth": 3,
+"blurb": "Shortest hops."
+},
+{
+"slug": "graph/dfs",
+"title": "Graph DFS",
+"category": "Graphs",
+"depth": 3,
+"blurb": "Explore deeply."
+},
+{
+"slug": "graph/grid",
+"title": "Grid search",
+"category": "Graphs",
+"depth": 3,
+"blurb": "Flood fill / matrix BFS."
+},
+{
+"slug": "graph/union-find",
+"title": "Union find",
+"category": "Graphs",
+"depth": 3,
+"blurb": "Disjoint sets."
+},
+{
+"slug": "graph/topo-sort",
+"title": "Topological sort",
+"category": "Graphs",
+"depth": 4,
+"blurb": "Order a DAG."
+},
+{
+"slug": "backtracking/subsets",
+"title": "Subsets",
+"category": "Backtracking",
+"depth": 3,
+"blurb": "Enumerate power set."
+},
+{
+"slug": "backtracking/permute",
+"title": "Permutations",
+"category": "Backtracking",
+"depth": 3,
+"blurb": "Enumerate orderings."
+},
+{
+"slug": "backtracking/combine",
+"title": "Combinations",
+"category": "Backtracking",
+"depth": 3,
+"blurb": "Choose k of n."
+},
+{
+"slug": "backtracking/constraint",
+"title": "Constrained search",
+"category": "Backtracking",
+"depth": 4,
+"blurb": "Prune invalid branches."
+},
+{
+"slug": "greedy/sorting",
+"title": "Greedy with sorting",
+"category": "Greedy",
+"depth": 2,
+"blurb": "Sort then sweep."
+},
+{
+"slug": "greedy/reach",
+"title": "Reachability greedy",
+"category": "Greedy",
+"depth": 3,
+"blurb": "Track furthest reach."
+},
+{
+"slug": "intervals/merge",
+"title": "Merge intervals",
+"category": "Intervals",
+"depth": 3,
+"blurb": "Coalesce overlaps."
+},
+{
+"slug": "intervals/schedule",
+"title": "Interval scheduling",
+"category": "Intervals",
+"depth": 3,
+"blurb": "Count / pick intervals."
+},
+{
+"slug": "dp/1d-linear",
+"title": "1D DP, linear",
+"category": "DP 1D",
+"depth": 3,
+"blurb": "Build from previous states."
+},
+{
+"slug": "dp/1d-choice",
+"title": "1D DP, choices",
+"category": "DP 1D",
+"depth": 4,
+"blurb": "Take or skip."
+},
+{
+"slug": "dp/subsequence",
+"title": "Subsequence DP",
+"category": "DP 1D",
+"depth": 4,
+"blurb": "LIS-style."
+},
+{
+"slug": "dp/partition",
+"title": "Partition DP",
+"category": "DP 1D",
+"depth": 4,
+"blurb": "Break a sequence."
+},
+{
+"slug": "dp/grid",
+"title": "Grid DP",
+"category": "DP 2D",
+"depth": 4,
+"blurb": "Paths and costs on a grid."
+},
+{
+"slug": "dp/two-seq",
+"title": "Two-sequence DP",
+"category": "DP 2D",
+"depth": 5,
+"blurb": "Align two strings."
+},
+{
+"slug": "dp/knapsack",
+"title": "Knapsack DP",
+"category": "DP 2D",
+"depth": 5,
+"blurb": "Bounded selection."
+},
+{
+"slug": "bit/basics",
+"title": "Bit basics",
+"category": "Bit",
+"depth": 1,
+"blurb": "Shifts and masks."
+},
+{
+"slug": "bit/xor",
+"title": "XOR tricks",
+"category": "Bit",
+"depth": 2,
+"blurb": "Cancellation."
+},
+{
+"slug": "bit/count",
+"title": "Bit counting",
+"category": "Bit",
+"depth": 2,
+"blurb": "Population count."
+},
+{
+"slug": "math/gcd",
+"title": "GCD / number theory",
+"category": "Math",
+"depth": 1,
+"blurb": "Divisibility."
+},
+{
+"slug": "math/primes",
+"title": "Primes",
+"category": "Math",
+"depth": 2,
+"blurb": "Sieve and tests."
+},
+{
+"slug": "math/digits",
+"title": "Digit manipulation",
+"category": "Math",
+"depth": 1,
+"blurb": "Decompose numbers."
+},
+{
+"slug": "math/modular",
+"title": "Modular / counting",
+"category": "Math",
+"depth": 2,
+"blurb": "Mod arithmetic."
+},
+{
+"slug": "trie/prefix",
+"title": "Prefix structures",
+"category": "Trie",
+"depth": 3,
+"blurb": "Shared prefixes."
+},
+{
+"slug": "recursion/base-case",
+"title": "Recursion base case",
+"category": "Recursion",
+"depth": 1,
+"blurb": "Terminate."
+},
+{
+"slug": "recursion/recursive-case",
+"title": "Recursive case",
+"category": "Recursion",
+"depth": 2,
+"blurb": "Reduce toward base."
+},
+{
+"slug": "recursion/divide",
+"title": "Divide and conquer",
+"category": "Recursion",
+"depth": 3,
+"blurb": "Split, solve, combine."
+}
+]

@@ -1,0 +1,5872 @@
+[
+{
+"id": "running-sum",
+"title": "Running sum",
+"category": "Arrays",
+"difficulty": 1,
+"funcName": "running_sum",
+"starter": "def running_sum(nums):\n    pass\n",
+"prompt": "Return the running prefix sums of `nums`: out[i] = nums[0] + ... + nums[i].",
+"solution": "def running_sum(nums):\n    out, s = [], 0\n    for x in nums:\n        s += x\n        out.append(s)\n    return out\n",
+"kcs": [
+{
+"slug": "arrays/prefix-sum",
+"weight": 1.0
+},
+{
+"slug": "arrays/iterate",
+"weight": 0.5
+}
+],
+"tests": [
+{
+"args": [
+[
+1,
+2,
+3,
+4
+]
+],
+"expected": [
+1,
+3,
+6,
+10
+],
+"hidden": false
+},
+{
+"args": [
+[
+1,
+1,
+1,
+1
+]
+],
+"expected": [
+1,
+2,
+3,
+4
+],
+"hidden": false
+},
+{
+"args": [
+[
+3,
+1,
+2,
+10,
+1
+]
+],
+"expected": [
+3,
+4,
+6,
+16,
+17
+],
+"hidden": true
+},
+{
+"args": [
+[
+-1,
+2,
+-3,
+4
+]
+],
+"expected": [
+-1,
+1,
+-2,
+2
+],
+"hidden": true
+}
+]
+},
+{
+"id": "max-subarray",
+"title": "Maximum subarray",
+"category": "Arrays",
+"difficulty": 2,
+"funcName": "max_subarray",
+"starter": "def max_subarray(nums):\n    pass\n",
+"prompt": "Return the largest sum of any contiguous non-empty subarray of `nums` (Kadane).",
+"solution": "def max_subarray(nums):\n    best = cur = nums[0]\n    for x in nums[1:]:\n        cur = max(x, cur + x)\n        best = max(best, cur)\n    return best\n",
+"kcs": [
+{
+"slug": "arrays/kadane",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+-2,
+1,
+-3,
+4,
+-1,
+2,
+1,
+-5,
+4
+]
+],
+"expected": 6,
+"hidden": false
+},
+{
+"args": [
+[
+1
+]
+],
+"expected": 1,
+"hidden": false
+},
+{
+"args": [
+[
+5,
+4,
+-1,
+7,
+8
+]
+],
+"expected": 23,
+"hidden": true
+},
+{
+"args": [
+[
+-3,
+-1,
+-2
+]
+],
+"expected": -1,
+"hidden": true
+}
+]
+},
+{
+"id": "move-zeroes",
+"title": "Move zeroes",
+"category": "Arrays",
+"difficulty": 1,
+"funcName": "move_zeroes",
+"starter": "def move_zeroes(nums):\n    pass\n",
+"prompt": "Move all zeroes in `nums` to the end while keeping the order of non-zero elements. Return the list.",
+"solution": "def move_zeroes(nums):\n    return [x for x in nums if x != 0] + [0] * nums.count(0)\n",
+"kcs": [
+{
+"slug": "arrays/in-place",
+"weight": 1.0
+},
+{
+"slug": "two-pointers/partition",
+"weight": 0.5
+}
+],
+"tests": [
+{
+"args": [
+[
+0,
+1,
+0,
+3,
+12
+]
+],
+"expected": [
+1,
+3,
+12,
+0,
+0
+],
+"hidden": false
+},
+{
+"args": [
+[
+0,
+0,
+1
+]
+],
+"expected": [
+1,
+0,
+0
+],
+"hidden": false
+},
+{
+"args": [
+[
+1,
+2,
+3
+]
+],
+"expected": [
+1,
+2,
+3
+],
+"hidden": true
+},
+{
+"args": [
+[
+0,
+0,
+0
+]
+],
+"expected": [
+0,
+0,
+0
+],
+"hidden": true
+}
+]
+},
+{
+"id": "product-except-self",
+"title": "Product except self",
+"category": "Arrays",
+"difficulty": 2,
+"funcName": "product_except_self",
+"starter": "def product_except_self(nums):\n    pass\n",
+"prompt": "Return an array where out[i] is the product of every element except nums[i]. No division.",
+"solution": "",
+"kcs": [
+{
+"slug": "arrays/prefix-sum",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+1,
+2,
+3,
+4
+]
+],
+"expected": [
+24,
+12,
+8,
+6
+],
+"hidden": false
+},
+{
+"args": [
+[
+-1,
+1,
+0,
+-3,
+3
+]
+],
+"expected": [
+0,
+0,
+9,
+0,
+0
+],
+"hidden": false
+},
+{
+"args": [
+[
+2,
+3,
+4
+]
+],
+"expected": [
+12,
+8,
+6
+],
+"hidden": true
+},
+{
+"args": [
+[
+5,
+5
+]
+],
+"expected": [
+5,
+5
+],
+"hidden": true
+}
+]
+},
+{
+"id": "rotate-array",
+"title": "Rotate array",
+"category": "Arrays",
+"difficulty": 2,
+"funcName": "rotate",
+"starter": "def rotate(nums, k):\n    pass\n",
+"prompt": "Rotate `nums` to the right by `k` steps and return it. k may exceed the length.",
+"solution": "",
+"kcs": [
+{
+"slug": "arrays/in-place",
+"weight": 1.0
+},
+{
+"slug": "arrays/indexing",
+"weight": 0.4
+}
+],
+"tests": [
+{
+"args": [
+[
+1,
+2,
+3,
+4,
+5,
+6,
+7
+],
+3
+],
+"expected": [
+5,
+6,
+7,
+1,
+2,
+3,
+4
+],
+"hidden": false
+},
+{
+"args": [
+[
+-1,
+-100,
+3,
+99
+],
+2
+],
+"expected": [
+3,
+99,
+-1,
+-100
+],
+"hidden": false
+},
+{
+"args": [
+[
+1,
+2
+],
+3
+],
+"expected": [
+2,
+1
+],
+"hidden": true
+},
+{
+"args": [
+[
+1
+],
+0
+],
+"expected": [
+1
+],
+"hidden": true
+}
+]
+},
+{
+"id": "reverse-string",
+"title": "Reverse string",
+"category": "Strings",
+"difficulty": 1,
+"funcName": "reverse_string",
+"starter": "def reverse_string(s):\n    pass\n",
+"prompt": "Return string `s` reversed. Use two pointers conceptually; do not just call reversed on the whole string trivially.",
+"solution": "def reverse_string(s):\n    return s[::-1]\n",
+"kcs": [
+{
+"slug": "two-pointers/convergent",
+"weight": 1.0
+},
+{
+"slug": "strings/traverse",
+"weight": 0.4
+}
+],
+"tests": [
+{
+"args": [
+"hello"
+],
+"expected": "olleh",
+"hidden": false
+},
+{
+"args": [
+"a"
+],
+"expected": "a",
+"hidden": false
+},
+{
+"args": [
+""
+],
+"expected": "",
+"hidden": true
+},
+{
+"args": [
+"racecar"
+],
+"expected": "racecar",
+"hidden": true
+}
+]
+},
+{
+"id": "valid-palindrome",
+"title": "Valid palindrome",
+"category": "Strings",
+"difficulty": 1,
+"funcName": "is_palindrome",
+"starter": "def is_palindrome(s):\n    pass\n",
+"prompt": "Return True if `s` is a palindrome considering only alphanumeric characters and ignoring case.",
+"solution": "def is_palindrome(s):\n    t = [c.lower() for c in s if c.isalnum()]\n    return t == t[::-1]\n",
+"kcs": [
+{
+"slug": "strings/palindrome",
+"weight": 1.0
+},
+{
+"slug": "two-pointers/convergent",
+"weight": 0.5
+}
+],
+"tests": [
+{
+"args": [
+"A man, a plan, a canal: Panama"
+],
+"expected": true,
+"hidden": false
+},
+{
+"args": [
+"race a car"
+],
+"expected": false,
+"hidden": false
+},
+{
+"args": [
+" "
+],
+"expected": true,
+"hidden": true
+},
+{
+"args": [
+"0P"
+],
+"expected": false,
+"hidden": true
+}
+]
+},
+{
+"id": "valid-anagram",
+"title": "Valid anagram",
+"category": "Strings",
+"difficulty": 1,
+"funcName": "is_anagram",
+"starter": "def is_anagram(s, t):\n    pass\n",
+"prompt": "Return True if `t` is an anagram of `s`.",
+"solution": "def is_anagram(s, t):\n    return sorted(s) == sorted(t)\n",
+"kcs": [
+{
+"slug": "hashing/frequency",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+"anagram",
+"nagaram"
+],
+"expected": true,
+"hidden": false
+},
+{
+"args": [
+"rat",
+"car"
+],
+"expected": false,
+"hidden": false
+},
+{
+"args": [
+"a",
+"ab"
+],
+"expected": false,
+"hidden": true
+},
+{
+"args": [
+"listen",
+"silent"
+],
+"expected": true,
+"hidden": true
+}
+]
+},
+{
+"id": "first-unique-char",
+"title": "First unique character",
+"category": "Strings",
+"difficulty": 1,
+"funcName": "first_uniq_char",
+"starter": "def first_uniq_char(s):\n    pass\n",
+"prompt": "Return the index of the first non-repeating character in `s`, or -1 if none.",
+"solution": "",
+"kcs": [
+{
+"slug": "hashing/frequency",
+"weight": 1.0
+},
+{
+"slug": "strings/traverse",
+"weight": 0.4
+}
+],
+"tests": [
+{
+"args": [
+"leetcode"
+],
+"expected": 0,
+"hidden": false
+},
+{
+"args": [
+"loveleetcode"
+],
+"expected": 2,
+"hidden": false
+},
+{
+"args": [
+"aabb"
+],
+"expected": -1,
+"hidden": true
+},
+{
+"args": [
+"z"
+],
+"expected": 0,
+"hidden": true
+}
+]
+},
+{
+"id": "longest-common-prefix",
+"title": "Longest common prefix",
+"category": "Strings",
+"difficulty": 2,
+"funcName": "longest_common_prefix",
+"starter": "def longest_common_prefix(strs):\n    pass\n",
+"prompt": "Return the longest common prefix string among an array of strings `strs`, or empty string.",
+"solution": "",
+"kcs": [
+{
+"slug": "strings/traverse",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+"flower",
+"flow",
+"flight"
+]
+],
+"expected": "fl",
+"hidden": false
+},
+{
+"args": [
+[
+"dog",
+"racecar",
+"car"
+]
+],
+"expected": "",
+"hidden": false
+},
+{
+"args": [
+[
+"interspecies",
+"interstellar",
+"interstate"
+]
+],
+"expected": "inters",
+"hidden": true
+},
+{
+"args": [
+[
+"a"
+]
+],
+"expected": "a",
+"hidden": true
+}
+]
+},
+{
+"id": "two-sum",
+"title": "Two sum",
+"category": "Hashing",
+"difficulty": 1,
+"funcName": "two_sum",
+"starter": "def two_sum(nums, target):\n    pass\n",
+"prompt": "Return indices `[i, j]` (i < j) of the two numbers in `nums` that add to `target`. Exactly one solution.",
+"solution": "def two_sum(nums, target):\n    seen = {}\n    for i, n in enumerate(nums):\n        if target - n in seen:\n            return [seen[target - n], i]\n        seen[n] = i\n",
+"kcs": [
+{
+"slug": "hashing/lookup",
+"weight": 1.0
+},
+{
+"slug": "arrays/iterate",
+"weight": 0.5
+}
+],
+"tests": [
+{
+"args": [
+[
+2,
+7,
+11,
+15
+],
+9
+],
+"expected": [
+0,
+1
+],
+"hidden": false
+},
+{
+"args": [
+[
+3,
+2,
+4
+],
+6
+],
+"expected": [
+1,
+2
+],
+"hidden": false
+},
+{
+"args": [
+[
+3,
+3
+],
+6
+],
+"expected": [
+0,
+1
+],
+"hidden": true
+},
+{
+"args": [
+[
+-1,
+-2,
+-3,
+-4,
+-5
+],
+-8
+],
+"expected": [
+2,
+4
+],
+"hidden": true
+}
+]
+},
+{
+"id": "contains-duplicate",
+"title": "Contains duplicate",
+"category": "Hashing",
+"difficulty": 1,
+"funcName": "contains_duplicate",
+"starter": "def contains_duplicate(nums):\n    pass\n",
+"prompt": "Return True if any value appears at least twice in `nums`.",
+"solution": "def contains_duplicate(nums):\n    return len(set(nums)) != len(nums)\n",
+"kcs": [
+{
+"slug": "hashing/set-dedup",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+1,
+2,
+3,
+1
+]
+],
+"expected": true,
+"hidden": false
+},
+{
+"args": [
+[
+1,
+2,
+3,
+4
+]
+],
+"expected": false,
+"hidden": false
+},
+{
+"args": [
+[]
+],
+"expected": false,
+"hidden": true
+},
+{
+"args": [
+[
+1,
+1
+]
+],
+"expected": true,
+"hidden": true
+}
+]
+},
+{
+"id": "majority-element",
+"title": "Majority element",
+"category": "Hashing",
+"difficulty": 1,
+"funcName": "majority_element",
+"starter": "def majority_element(nums):\n    pass\n",
+"prompt": "Return the element that appears more than n/2 times in `nums` (guaranteed to exist).",
+"solution": "def majority_element(nums):\n    count = cand = 0\n    for x in nums:\n        if count == 0:\n            cand = x\n        count += 1 if x == cand else -1\n    return cand\n",
+"kcs": [
+{
+"slug": "hashing/frequency",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+3,
+2,
+3
+]
+],
+"expected": 3,
+"hidden": false
+},
+{
+"args": [
+[
+2,
+2,
+1,
+1,
+1,
+2,
+2
+]
+],
+"expected": 2,
+"hidden": false
+},
+{
+"args": [
+[
+1
+]
+],
+"expected": 1,
+"hidden": true
+},
+{
+"args": [
+[
+5,
+5,
+5,
+1,
+2
+]
+],
+"expected": 5,
+"hidden": true
+}
+]
+},
+{
+"id": "group-anagrams",
+"title": "Group anagrams",
+"category": "Hashing",
+"difficulty": 2,
+"funcName": "group_anagrams",
+"starter": "def group_anagrams(strs):\n    pass\n",
+"prompt": "Group the strings that are anagrams of each other. Return a list of groups, each group sorted, and the list of groups sorted.",
+"solution": "",
+"kcs": [
+{
+"slug": "hashing/grouping",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+"eat",
+"tea",
+"tan",
+"ate",
+"nat",
+"bat"
+]
+],
+"expected": [
+[
+"ate",
+"eat",
+"tea"
+],
+[
+"bat"
+],
+[
+"nat",
+"tan"
+]
+],
+"hidden": false
+},
+{
+"args": [
+[
+"",
+""
+]
+],
+"expected": [
+[
+"",
+""
+]
+],
+"hidden": false
+},
+{
+"args": [
+[
+"a"
+]
+],
+"expected": [
+[
+"a"
+]
+],
+"hidden": true
+},
+{
+"args": [
+[
+"abc",
+"bca",
+"xyz"
+]
+],
+"expected": [
+[
+"abc",
+"bca"
+],
+[
+"xyz"
+]
+],
+"hidden": true
+}
+]
+},
+{
+"id": "subarray-sum-k",
+"title": "Subarray sum equals K",
+"category": "Hashing",
+"difficulty": 2,
+"funcName": "subarray_sum",
+"starter": "def subarray_sum(nums, k):\n    pass\n",
+"prompt": "Return the number of contiguous subarrays of `nums` whose sum equals `k`.",
+"solution": "",
+"kcs": [
+{
+"slug": "hashing/frequency",
+"weight": 1.0
+},
+{
+"slug": "arrays/prefix-sum",
+"weight": 0.7
+}
+],
+"tests": [
+{
+"args": [
+[
+1,
+1,
+1
+],
+2
+],
+"expected": 2,
+"hidden": false
+},
+{
+"args": [
+[
+1,
+2,
+3
+],
+3
+],
+"expected": 2,
+"hidden": false
+},
+{
+"args": [
+[
+1,
+-1,
+0
+],
+0
+],
+"expected": 3,
+"hidden": true
+},
+{
+"args": [
+[
+3,
+4,
+7,
+2,
+-3,
+1,
+4,
+2
+],
+7
+],
+"expected": 4,
+"hidden": true
+}
+]
+},
+{
+"id": "two-sum-sorted",
+"title": "Two sum II (sorted)",
+"category": "Two Pointers",
+"difficulty": 1,
+"funcName": "two_sum_sorted",
+"starter": "def two_sum_sorted(nums, target):\n    pass\n",
+"prompt": "Given an ascending `nums`, return 0-indexed `[i, j]` with i < j and nums[i] + nums[j] == target.",
+"solution": "def two_sum_sorted(nums, target):\n    l, r = 0, len(nums) - 1\n    while l < r:\n        t = nums[l] + nums[r]\n        if t == target:\n            return [l, r]\n        if t < target:\n            l += 1\n        else:\n            r -= 1\n    return [-1, -1]\n",
+"kcs": [
+{
+"slug": "two-pointers/convergent",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+2,
+7,
+11,
+15
+],
+9
+],
+"expected": [
+0,
+1
+],
+"hidden": false
+},
+{
+"args": [
+[
+2,
+3,
+4
+],
+6
+],
+"expected": [
+0,
+2
+],
+"hidden": false
+},
+{
+"args": [
+[
+-1,
+0
+],
+-1
+],
+"expected": [
+0,
+1
+],
+"hidden": true
+},
+{
+"args": [
+[
+1,
+2,
+3,
+4,
+4
+],
+8
+],
+"expected": [
+3,
+4
+],
+"hidden": true
+}
+]
+},
+{
+"id": "is-subsequence",
+"title": "Is subsequence",
+"category": "Two Pointers",
+"difficulty": 1,
+"funcName": "is_subsequence",
+"starter": "def is_subsequence(s, t):\n    pass\n",
+"prompt": "Return True if `s` is a subsequence of `t` (characters in order, not necessarily contiguous).",
+"solution": "",
+"kcs": [
+{
+"slug": "two-pointers/fast-slow",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+"abc",
+"ahbgdc"
+],
+"expected": true,
+"hidden": false
+},
+{
+"args": [
+"axc",
+"ahbgdc"
+],
+"expected": false,
+"hidden": false
+},
+{
+"args": [
+"",
+"abc"
+],
+"expected": true,
+"hidden": true
+},
+{
+"args": [
+"ace",
+"abcde"
+],
+"expected": true,
+"hidden": true
+}
+]
+},
+{
+"id": "container-water",
+"title": "Container with most water",
+"category": "Two Pointers",
+"difficulty": 2,
+"funcName": "max_area",
+"starter": "def max_area(height):\n    pass\n",
+"prompt": "Given vertical line heights, return the maximum water area between two lines.",
+"solution": "",
+"kcs": [
+{
+"slug": "two-pointers/convergent",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+1,
+8,
+6,
+2,
+5,
+4,
+8,
+3,
+7
+]
+],
+"expected": 49,
+"hidden": false
+},
+{
+"args": [
+[
+1,
+1
+]
+],
+"expected": 1,
+"hidden": false
+},
+{
+"args": [
+[
+4,
+3,
+2,
+1,
+4
+]
+],
+"expected": 16,
+"hidden": true
+},
+{
+"args": [
+[
+1,
+2,
+1
+]
+],
+"expected": 2,
+"hidden": true
+}
+]
+},
+{
+"id": "three-sum",
+"title": "3Sum",
+"category": "Two Pointers",
+"difficulty": 3,
+"funcName": "three_sum",
+"starter": "def three_sum(nums):\n    pass\n",
+"prompt": "Return all unique triplets `[a, b, c]` from `nums` that sum to zero. Each triplet sorted ascending; the list of triplets sorted.",
+"solution": "",
+"kcs": [
+{
+"slug": "two-pointers/convergent",
+"weight": 1.0
+},
+{
+"slug": "greedy/sorting",
+"weight": 0.4
+}
+],
+"tests": [
+{
+"args": [
+[
+-1,
+0,
+1,
+2,
+-1,
+-4
+]
+],
+"expected": [
+[
+-1,
+-1,
+2
+],
+[
+-1,
+0,
+1
+]
+],
+"hidden": false
+},
+{
+"args": [
+[
+0,
+1,
+1
+]
+],
+"expected": [],
+"hidden": false
+},
+{
+"args": [
+[
+0,
+0,
+0
+]
+],
+"expected": [
+[
+0,
+0,
+0
+]
+],
+"hidden": true
+},
+{
+"args": [
+[
+-2,
+0,
+1,
+1,
+2
+]
+],
+"expected": [
+[
+-2,
+0,
+2
+],
+[
+-2,
+1,
+1
+]
+],
+"hidden": true
+}
+]
+},
+{
+"id": "max-window-sum",
+"title": "Max window sum",
+"category": "Sliding Window",
+"difficulty": 2,
+"funcName": "max_window_sum",
+"starter": "def max_window_sum(nums, k):\n    pass\n",
+"prompt": "Return the maximum sum of any contiguous subarray of length exactly `k`.",
+"solution": "def max_window_sum(nums, k):\n    cur = sum(nums[:k])\n    best = cur\n    for i in range(k, len(nums)):\n        cur += nums[i] - nums[i - k]\n        best = max(best, cur)\n    return best\n",
+"kcs": [
+{
+"slug": "sliding-window/fixed",
+"weight": 1.0
+},
+{
+"slug": "arrays/iterate",
+"weight": 0.4
+}
+],
+"tests": [
+{
+"args": [
+[
+2,
+1,
+5,
+1,
+3,
+2
+],
+3
+],
+"expected": 9,
+"hidden": false
+},
+{
+"args": [
+[
+2,
+3,
+4,
+1,
+5
+],
+2
+],
+"expected": 7,
+"hidden": false
+},
+{
+"args": [
+[
+1,
+1,
+1,
+1
+],
+4
+],
+"expected": 4,
+"hidden": true
+},
+{
+"args": [
+[
+-1,
+-2,
+-3,
+-4
+],
+2
+],
+"expected": -3,
+"hidden": true
+}
+]
+},
+{
+"id": "min-window-len",
+"title": "Min window length",
+"category": "Sliding Window",
+"difficulty": 3,
+"funcName": "min_window_len",
+"starter": "def min_window_len(nums, target):\n    pass\n",
+"prompt": "Given positive `nums`, return the minimal length of a contiguous subarray with sum >= `target`, else 0.",
+"solution": "",
+"kcs": [
+{
+"slug": "sliding-window/shrink",
+"weight": 1.0
+},
+{
+"slug": "sliding-window/expand",
+"weight": 0.6
+}
+],
+"tests": [
+{
+"args": [
+[
+2,
+3,
+1,
+2,
+4,
+3
+],
+7
+],
+"expected": 2,
+"hidden": false
+},
+{
+"args": [
+[
+1,
+4,
+4
+],
+4
+],
+"expected": 1,
+"hidden": false
+},
+{
+"args": [
+[
+1,
+1,
+1,
+1
+],
+11
+],
+"expected": 0,
+"hidden": true
+},
+{
+"args": [
+[
+1,
+2,
+3,
+4,
+5
+],
+11
+],
+"expected": 3,
+"hidden": true
+}
+]
+},
+{
+"id": "longest-no-repeat",
+"title": "Longest substring no repeat",
+"category": "Sliding Window",
+"difficulty": 3,
+"funcName": "length_of_longest",
+"starter": "def length_of_longest(s):\n    pass\n",
+"prompt": "Return the length of the longest substring of `s` without repeating characters.",
+"solution": "def length_of_longest(s):\n    seen = {}\n    l = best = 0\n    for r, c in enumerate(s):\n        if c in seen and seen[c] >= l:\n            l = seen[c] + 1\n        seen[c] = r\n        best = max(best, r - l + 1)\n    return best\n",
+"kcs": [
+{
+"slug": "sliding-window/distinct",
+"weight": 1.0
+},
+{
+"slug": "hashing/lookup",
+"weight": 0.5
+}
+],
+"tests": [
+{
+"args": [
+"abcabcbb"
+],
+"expected": 3,
+"hidden": false
+},
+{
+"args": [
+"bbbbb"
+],
+"expected": 1,
+"hidden": false
+},
+{
+"args": [
+"pwwkew"
+],
+"expected": 3,
+"hidden": true
+},
+{
+"args": [
+""
+],
+"expected": 0,
+"hidden": true
+}
+]
+},
+{
+"id": "find-anagrams",
+"title": "Find all anagrams",
+"category": "Sliding Window",
+"difficulty": 3,
+"funcName": "find_anagrams",
+"starter": "def find_anagrams(s, p):\n    pass\n",
+"prompt": "Return the start indices of all substrings of `s` that are anagrams of `p`.",
+"solution": "",
+"kcs": [
+{
+"slug": "sliding-window/fixed",
+"weight": 1.0
+},
+{
+"slug": "hashing/frequency",
+"weight": 0.7
+}
+],
+"tests": [
+{
+"args": [
+"cbaebabacd",
+"abc"
+],
+"expected": [
+0,
+6
+],
+"hidden": false
+},
+{
+"args": [
+"abab",
+"ab"
+],
+"expected": [
+0,
+1,
+2
+],
+"hidden": false
+},
+{
+"args": [
+"aa",
+"bb"
+],
+"expected": [],
+"hidden": true
+},
+{
+"args": [
+"af",
+"be"
+],
+"expected": [],
+"hidden": true
+}
+]
+},
+{
+"id": "binary-search",
+"title": "Binary search",
+"category": "Binary Search",
+"difficulty": 2,
+"funcName": "binary_search",
+"starter": "def binary_search(nums, target):\n    pass\n",
+"prompt": "Return the index of `target` in the sorted `nums`, or -1.",
+"solution": "def binary_search(nums, target):\n    lo, hi = 0, len(nums) - 1\n    while lo <= hi:\n        mid = (lo + hi) // 2\n        if nums[mid] == target:\n            return mid\n        if nums[mid] < target:\n            lo = mid + 1\n        else:\n            hi = mid - 1\n    return -1\n",
+"kcs": [
+{
+"slug": "binary-search/boundary",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+-1,
+0,
+3,
+5,
+9,
+12
+],
+9
+],
+"expected": 4,
+"hidden": false
+},
+{
+"args": [
+[
+-1,
+0,
+3,
+5,
+9,
+12
+],
+2
+],
+"expected": -1,
+"hidden": false
+},
+{
+"args": [
+[
+5
+],
+5
+],
+"expected": 0,
+"hidden": true
+},
+{
+"args": [
+[
+1,
+2,
+3,
+4,
+5,
+6,
+7
+],
+7
+],
+"expected": 6,
+"hidden": true
+}
+]
+},
+{
+"id": "search-insert",
+"title": "Search insert position",
+"category": "Binary Search",
+"difficulty": 1,
+"funcName": "search_insert",
+"starter": "def search_insert(nums, target):\n    pass\n",
+"prompt": "Return the index where `target` is, or where it would be inserted to keep `nums` sorted.",
+"solution": "def search_insert(nums, target):\n    lo, hi = 0, len(nums)\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if nums[mid] < target:\n            lo = mid + 1\n        else:\n            hi = mid\n    return lo\n",
+"kcs": [
+{
+"slug": "binary-search/insert",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+1,
+3,
+5,
+6
+],
+5
+],
+"expected": 2,
+"hidden": false
+},
+{
+"args": [
+[
+1,
+3,
+5,
+6
+],
+2
+],
+"expected": 1,
+"hidden": false
+},
+{
+"args": [
+[
+1,
+3,
+5,
+6
+],
+7
+],
+"expected": 4,
+"hidden": true
+},
+{
+"args": [
+[
+1,
+3,
+5,
+6
+],
+0
+],
+"expected": 0,
+"hidden": true
+}
+]
+},
+{
+"id": "sqrt-floor",
+"title": "Integer square root",
+"category": "Binary Search",
+"difficulty": 2,
+"funcName": "my_sqrt",
+"starter": "def my_sqrt(x):\n    pass\n",
+"prompt": "Return floor(sqrt(x)) for non-negative integer `x`, computed by binary search on the answer.",
+"solution": "",
+"kcs": [
+{
+"slug": "binary-search/on-answer",
+"weight": 1.0
+},
+{
+"slug": "math/digits",
+"weight": 0.3
+}
+],
+"tests": [
+{
+"args": [
+4
+],
+"expected": 2,
+"hidden": false
+},
+{
+"args": [
+8
+],
+"expected": 2,
+"hidden": false
+},
+{
+"args": [
+0
+],
+"expected": 0,
+"hidden": true
+},
+{
+"args": [
+2147395600
+],
+"expected": 46340,
+"hidden": true
+}
+]
+},
+{
+"id": "search-rotated",
+"title": "Search in rotated array",
+"category": "Binary Search",
+"difficulty": 3,
+"funcName": "search_rotated",
+"starter": "def search_rotated(nums, target):\n    pass\n",
+"prompt": "A sorted array was rotated at an unknown pivot. Return the index of `target`, or -1.",
+"solution": "",
+"kcs": [
+{
+"slug": "binary-search/rotated",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+4,
+5,
+6,
+7,
+0,
+1,
+2
+],
+0
+],
+"expected": 4,
+"hidden": false
+},
+{
+"args": [
+[
+4,
+5,
+6,
+7,
+0,
+1,
+2
+],
+3
+],
+"expected": -1,
+"hidden": false
+},
+{
+"args": [
+[
+1
+],
+0
+],
+"expected": -1,
+"hidden": true
+},
+{
+"args": [
+[
+5,
+1,
+3
+],
+5
+],
+"expected": 0,
+"hidden": true
+}
+]
+},
+{
+"id": "valid-parens",
+"title": "Valid parentheses",
+"category": "Stack",
+"difficulty": 2,
+"funcName": "is_valid",
+"starter": "def is_valid(s):\n    pass\n",
+"prompt": "Return True if every bracket in `s` (of ()[]{}) is closed by the matching type in the correct order.",
+"solution": "def is_valid(s):\n    pairs = {')': '(', ']': '[', '}': '{'}\n    st = []\n    for ch in s:\n        if ch in '([{':\n            st.append(ch)\n        elif not st or st.pop() != pairs[ch]:\n            return False\n    return not st\n",
+"kcs": [
+{
+"slug": "stack/lifo",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+"()[]{}"
+],
+"expected": true,
+"hidden": false
+},
+{
+"args": [
+"(]"
+],
+"expected": false,
+"hidden": false
+},
+{
+"args": [
+"([)]"
+],
+"expected": false,
+"hidden": true
+},
+{
+"args": [
+"{[]}"
+],
+"expected": true,
+"hidden": true
+}
+]
+},
+{
+"id": "eval-rpn",
+"title": "Evaluate RPN",
+"category": "Stack",
+"difficulty": 2,
+"funcName": "eval_rpn",
+"starter": "def eval_rpn(tokens):\n    pass\n",
+"prompt": "Evaluate the arithmetic expression in Reverse Polish Notation `tokens` (+ - * /, integer truncation toward zero).",
+"solution": "",
+"kcs": [
+{
+"slug": "stack/expression",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+"2",
+"1",
+"+",
+"3",
+"*"
+]
+],
+"expected": 9,
+"hidden": false
+},
+{
+"args": [
+[
+"4",
+"13",
+"5",
+"/",
+"+"
+]
+],
+"expected": 6,
+"hidden": false
+},
+{
+"args": [
+[
+"3",
+"4",
+"-"
+]
+],
+"expected": -1,
+"hidden": true
+},
+{
+"args": [
+[
+"10",
+"2",
+"/"
+]
+],
+"expected": 5,
+"hidden": true
+}
+]
+},
+{
+"id": "daily-temperatures",
+"title": "Daily temperatures",
+"category": "Stack",
+"difficulty": 2,
+"funcName": "daily_temperatures",
+"starter": "def daily_temperatures(temps):\n    pass\n",
+"prompt": "For each day, return how many days until a warmer temperature, or 0 if none. Use a monotonic stack.",
+"solution": "",
+"kcs": [
+{
+"slug": "stack/monotonic",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+73,
+74,
+75,
+71,
+69,
+72,
+76,
+73
+]
+],
+"expected": [
+1,
+1,
+4,
+2,
+1,
+1,
+0,
+0
+],
+"hidden": false
+},
+{
+"args": [
+[
+30,
+40,
+50,
+60
+]
+],
+"expected": [
+1,
+1,
+1,
+0
+],
+"hidden": false
+},
+{
+"args": [
+[
+30,
+60,
+90
+]
+],
+"expected": [
+1,
+1,
+0
+],
+"hidden": true
+},
+{
+"args": [
+[
+90,
+80,
+70
+]
+],
+"expected": [
+0,
+0,
+0
+],
+"hidden": true
+}
+]
+},
+{
+"id": "next-greater",
+"title": "Next greater element",
+"category": "Stack",
+"difficulty": 2,
+"funcName": "next_greater",
+"starter": "def next_greater(nums):\n    pass\n",
+"prompt": "For each element return the next strictly greater element to its right, or -1. Use a monotonic stack.",
+"solution": "",
+"kcs": [
+{
+"slug": "stack/monotonic",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+2,
+1,
+2,
+4,
+3
+]
+],
+"expected": [
+4,
+2,
+4,
+-1,
+-1
+],
+"hidden": false
+},
+{
+"args": [
+[
+1,
+2,
+3
+]
+],
+"expected": [
+2,
+3,
+-1
+],
+"hidden": false
+},
+{
+"args": [
+[
+3,
+2,
+1
+]
+],
+"expected": [
+-1,
+-1,
+-1
+],
+"hidden": true
+},
+{
+"args": [
+[
+5
+]
+],
+"expected": [
+-1
+],
+"hidden": true
+}
+]
+},
+{
+"id": "sliding-window-max",
+"title": "Sliding window maximum",
+"category": "Queue",
+"difficulty": 3,
+"funcName": "max_sliding_window",
+"starter": "def max_sliding_window(nums, k):\n    pass\n",
+"prompt": "Return the maximum of each contiguous window of size `k` as you slide across `nums`.",
+"solution": "",
+"kcs": [
+{
+"slug": "queue/monotonic",
+"weight": 1.0
+},
+{
+"slug": "sliding-window/fixed",
+"weight": 0.6
+}
+],
+"tests": [
+{
+"args": [
+[
+1,
+3,
+-1,
+-3,
+5,
+3,
+6,
+7
+],
+3
+],
+"expected": [
+3,
+3,
+5,
+5,
+6,
+7
+],
+"hidden": false
+},
+{
+"args": [
+[
+1
+],
+1
+],
+"expected": [
+1
+],
+"hidden": false
+},
+{
+"args": [
+[
+9,
+8,
+7,
+6
+],
+2
+],
+"expected": [
+9,
+8,
+7
+],
+"hidden": true
+},
+{
+"args": [
+[
+1,
+2,
+3,
+4
+],
+4
+],
+"expected": [
+4
+],
+"hidden": true
+}
+]
+},
+{
+"id": "middle-node",
+"title": "Middle of the list",
+"category": "Linked List",
+"difficulty": 1,
+"funcName": "middle_value",
+"starter": "def middle_value(vals):\n    pass\n",
+"prompt": "The list is given as values `vals`. Return the value of the middle node (second middle if even length).",
+"solution": "",
+"kcs": [
+{
+"slug": "linked-list/two-pointer",
+"weight": 1.0
+},
+{
+"slug": "two-pointers/fast-slow",
+"weight": 0.6
+}
+],
+"tests": [
+{
+"args": [
+[
+1,
+2,
+3,
+4,
+5
+]
+],
+"expected": 3,
+"hidden": false
+},
+{
+"args": [
+[
+1,
+2,
+3,
+4,
+5,
+6
+]
+],
+"expected": 4,
+"hidden": false
+},
+{
+"args": [
+[
+7
+]
+],
+"expected": 7,
+"hidden": true
+},
+{
+"args": [
+[
+1,
+2
+]
+],
+"expected": 2,
+"hidden": true
+}
+]
+},
+{
+"id": "merge-sorted-lists",
+"title": "Merge two sorted lists",
+"category": "Linked List",
+"difficulty": 1,
+"funcName": "merge_two",
+"starter": "def merge_two(a, b):\n    pass\n",
+"prompt": "Merge two ascending lists `a` and `b` (given as value arrays) into one sorted list and return it.",
+"solution": "",
+"kcs": [
+{
+"slug": "linked-list/merge",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+1,
+2,
+4
+],
+[
+1,
+3,
+4
+]
+],
+"expected": [
+1,
+1,
+2,
+3,
+4,
+4
+],
+"hidden": false
+},
+{
+"args": [
+[],
+[]
+],
+"expected": [],
+"hidden": false
+},
+{
+"args": [
+[],
+[
+0
+]
+],
+"expected": [
+0
+],
+"hidden": true
+},
+{
+"args": [
+[
+1,
+5,
+9
+],
+[
+2,
+3,
+6
+]
+],
+"expected": [
+1,
+2,
+3,
+5,
+6,
+9
+],
+"hidden": true
+}
+]
+},
+{
+"id": "remove-nth-end",
+"title": "Remove nth from end",
+"category": "Linked List",
+"difficulty": 2,
+"funcName": "remove_nth",
+"starter": "def remove_nth(vals, n):\n    pass\n",
+"prompt": "Remove the `n`-th node from the end of the list `vals` and return the resulting value array.",
+"solution": "",
+"kcs": [
+{
+"slug": "linked-list/two-pointer",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+1,
+2,
+3,
+4,
+5
+],
+2
+],
+"expected": [
+1,
+2,
+3,
+5
+],
+"hidden": false
+},
+{
+"args": [
+[
+1
+],
+1
+],
+"expected": [],
+"hidden": false
+},
+{
+"args": [
+[
+1,
+2
+],
+1
+],
+"expected": [
+1
+],
+"hidden": true
+},
+{
+"args": [
+[
+1,
+2,
+3
+],
+3
+],
+"expected": [
+2,
+3
+],
+"hidden": true
+}
+]
+},
+{
+"id": "max-depth",
+"title": "Maximum depth",
+"category": "Trees",
+"difficulty": 1,
+"funcName": "max_depth",
+"starter": "def max_depth(root):\n    pass\n",
+"prompt": "A binary tree is given as nested lists `[val, left, right]` or null. Return its maximum depth.",
+"solution": "def max_depth(root):\n    if root is None:\n        return 0\n    return 1 + max(max_depth(root[1]), max_depth(root[2]))\n",
+"kcs": [
+{
+"slug": "trees/dfs",
+"weight": 1.0
+},
+{
+"slug": "recursion/recursive-case",
+"weight": 0.5
+}
+],
+"tests": [
+{
+"args": [
+[
+3,
+[
+9,
+null,
+null
+],
+[
+20,
+[
+15,
+null,
+null
+],
+[
+7,
+null,
+null
+]
+]
+]
+],
+"expected": 3,
+"hidden": false
+},
+{
+"args": [
+[
+1,
+[
+2,
+[
+4,
+null,
+null
+],
+[
+5,
+null,
+null
+]
+],
+[
+3,
+null,
+null
+]
+]
+],
+"expected": 3,
+"hidden": false
+},
+{
+"args": [
+null
+],
+"expected": 0,
+"hidden": true
+},
+{
+"args": [
+[
+1,
+null,
+null
+]
+],
+"expected": 1,
+"hidden": true
+}
+]
+},
+{
+"id": "tree-sum",
+"title": "Sum of tree",
+"category": "Trees",
+"difficulty": 1,
+"funcName": "tree_sum",
+"starter": "def tree_sum(root):\n    pass\n",
+"prompt": "Tree given as nested lists `[val, left, right]` or null. Return the sum of all node values.",
+"solution": "",
+"kcs": [
+{
+"slug": "trees/dfs",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+3,
+[
+9,
+null,
+null
+],
+[
+20,
+[
+15,
+null,
+null
+],
+[
+7,
+null,
+null
+]
+]
+]
+],
+"expected": 54,
+"hidden": false
+},
+{
+"args": [
+[
+1,
+[
+2,
+[
+4,
+null,
+null
+],
+[
+5,
+null,
+null
+]
+],
+[
+3,
+null,
+null
+]
+]
+],
+"expected": 15,
+"hidden": false
+},
+{
+"args": [
+null
+],
+"expected": 0,
+"hidden": true
+},
+{
+"args": [
+[
+5,
+[
+-3,
+null,
+null
+],
+[
+2,
+null,
+null
+]
+]
+],
+"expected": 4,
+"hidden": true
+}
+]
+},
+{
+"id": "invert-tree",
+"title": "Invert binary tree",
+"category": "Trees",
+"difficulty": 1,
+"funcName": "invert_tree",
+"starter": "def invert_tree(root):\n    pass\n",
+"prompt": "Tree given as nested lists `[val, left, right]` or null. Return the mirror-image tree in the same format.",
+"solution": "",
+"kcs": [
+{
+"slug": "trees/dfs",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+1,
+[
+2,
+[
+4,
+null,
+null
+],
+[
+5,
+null,
+null
+]
+],
+[
+3,
+null,
+null
+]
+]
+],
+"expected": [
+1,
+[
+3,
+null,
+null
+],
+[
+2,
+[
+5,
+null,
+null
+],
+[
+4,
+null,
+null
+]
+]
+],
+"hidden": false
+},
+{
+"args": [
+[
+4,
+[
+2,
+null,
+null
+],
+[
+7,
+null,
+null
+]
+]
+],
+"expected": [
+4,
+[
+7,
+null,
+null
+],
+[
+2,
+null,
+null
+]
+],
+"hidden": false
+},
+{
+"args": [
+null
+],
+"expected": null,
+"hidden": true
+},
+{
+"args": [
+[
+1,
+[
+2,
+null,
+null
+],
+null
+]
+],
+"expected": [
+1,
+null,
+[
+2,
+null,
+null
+]
+],
+"hidden": true
+}
+]
+},
+{
+"id": "level-order",
+"title": "Level order traversal",
+"category": "Trees",
+"difficulty": 2,
+"funcName": "level_order",
+"starter": "def level_order(root):\n    pass\n",
+"prompt": "Tree as nested lists. Return values grouped by level, top to bottom, left to right.",
+"solution": "",
+"kcs": [
+{
+"slug": "trees/bfs",
+"weight": 1.0
+},
+{
+"slug": "queue/fifo",
+"weight": 0.6
+}
+],
+"tests": [
+{
+"args": [
+[
+3,
+[
+9,
+null,
+null
+],
+[
+20,
+[
+15,
+null,
+null
+],
+[
+7,
+null,
+null
+]
+]
+]
+],
+"expected": [
+[
+3
+],
+[
+9,
+20
+],
+[
+15,
+7
+]
+],
+"hidden": false
+},
+{
+"args": [
+[
+1,
+[
+2,
+[
+4,
+null,
+null
+],
+[
+5,
+null,
+null
+]
+],
+[
+3,
+null,
+null
+]
+]
+],
+"expected": [
+[
+1
+],
+[
+2,
+3
+],
+[
+4,
+5
+]
+],
+"hidden": false
+},
+{
+"args": [
+null
+],
+"expected": [],
+"hidden": true
+},
+{
+"args": [
+[
+1,
+null,
+[
+2,
+null,
+null
+]
+]
+],
+"expected": [
+[
+1
+],
+[
+2
+]
+],
+"hidden": true
+}
+]
+},
+{
+"id": "validate-bst",
+"title": "Validate BST",
+"category": "Trees",
+"difficulty": 3,
+"funcName": "is_valid_bst",
+"starter": "def is_valid_bst(root):\n    pass\n",
+"prompt": "Tree as nested lists. Return True if it is a valid binary search tree (strict ordering).",
+"solution": "",
+"kcs": [
+{
+"slug": "trees/bst",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+5,
+[
+3,
+[
+2,
+null,
+null
+],
+[
+4,
+null,
+null
+]
+],
+[
+7,
+[
+6,
+null,
+null
+],
+[
+8,
+null,
+null
+]
+]
+]
+],
+"expected": true,
+"hidden": false
+},
+{
+"args": [
+[
+5,
+[
+3,
+null,
+null
+],
+[
+7,
+[
+4,
+null,
+null
+],
+[
+8,
+null,
+null
+]
+]
+]
+],
+"expected": false,
+"hidden": false
+},
+{
+"args": [
+null
+],
+"expected": true,
+"hidden": true
+},
+{
+"args": [
+[
+2,
+[
+1,
+null,
+null
+],
+[
+3,
+null,
+null
+]
+]
+],
+"expected": true,
+"hidden": true
+}
+]
+},
+{
+"id": "kth-largest",
+"title": "Kth largest element",
+"category": "Heap",
+"difficulty": 2,
+"funcName": "find_kth_largest",
+"starter": "def find_kth_largest(nums, k):\n    pass\n",
+"prompt": "Return the `k`-th largest element in `nums` (k is 1-indexed).",
+"solution": "",
+"kcs": [
+{
+"slug": "heap/top-k",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+3,
+2,
+1,
+5,
+6,
+4
+],
+2
+],
+"expected": 5,
+"hidden": false
+},
+{
+"args": [
+[
+3,
+2,
+3,
+1,
+2,
+4,
+5,
+5,
+6
+],
+4
+],
+"expected": 4,
+"hidden": false
+},
+{
+"args": [
+[
+1
+],
+1
+],
+"expected": 1,
+"hidden": true
+},
+{
+"args": [
+[
+7,
+7,
+7
+],
+2
+],
+"expected": 7,
+"hidden": true
+}
+]
+},
+{
+"id": "top-k-frequent",
+"title": "Top K frequent",
+"category": "Heap",
+"difficulty": 2,
+"funcName": "top_k_frequent",
+"starter": "def top_k_frequent(nums, k):\n    pass\n",
+"prompt": "Return the `k` most frequent elements in `nums`, sorted ascending in the returned list.",
+"solution": "",
+"kcs": [
+{
+"slug": "heap/top-k",
+"weight": 1.0
+},
+{
+"slug": "hashing/frequency",
+"weight": 0.7
+}
+],
+"tests": [
+{
+"args": [
+[
+1,
+1,
+1,
+2,
+2,
+3
+],
+2
+],
+"expected": [
+1,
+2
+],
+"hidden": false
+},
+{
+"args": [
+[
+1
+],
+1
+],
+"expected": [
+1
+],
+"hidden": false
+},
+{
+"args": [
+[
+4,
+4,
+5,
+5,
+6
+],
+2
+],
+"expected": [
+4,
+5
+],
+"hidden": true
+},
+{
+"args": [
+[
+7,
+7,
+8,
+9,
+9,
+9
+],
+1
+],
+"expected": [
+9
+],
+"hidden": true
+}
+]
+},
+{
+"id": "merge-k-lists",
+"title": "Merge K sorted lists",
+"category": "Heap",
+"difficulty": 3,
+"funcName": "merge_k",
+"starter": "def merge_k(lists):\n    pass\n",
+"prompt": "Merge `k` ascending lists (given as a list of value arrays) into one sorted list.",
+"solution": "",
+"kcs": [
+{
+"slug": "heap/k-way",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+[
+1,
+4,
+5
+],
+[
+1,
+3,
+4
+],
+[
+2,
+6
+]
+]
+],
+"expected": [
+1,
+1,
+2,
+3,
+4,
+4,
+5,
+6
+],
+"hidden": false
+},
+{
+"args": [
+[]
+],
+"expected": [],
+"hidden": false
+},
+{
+"args": [
+[
+[]
+]
+],
+"expected": [],
+"hidden": true
+},
+{
+"args": [
+[
+[
+1
+],
+[
+0
+]
+]
+],
+"expected": [
+0,
+1
+],
+"hidden": true
+}
+]
+},
+{
+"id": "bfs-order",
+"title": "BFS traversal",
+"category": "Graphs",
+"difficulty": 2,
+"funcName": "bfs_order",
+"starter": "def bfs_order(adj, start):\n    pass\n",
+"prompt": "`adj` is an adjacency list (adj[i] = sorted neighbors). Return BFS visit order from `start`, exploring neighbors in ascending order.",
+"solution": "",
+"kcs": [
+{
+"slug": "graph/bfs",
+"weight": 1.0
+},
+{
+"slug": "graph/adjacency",
+"weight": 0.6
+}
+],
+"tests": [
+{
+"args": [
+[
+[
+1,
+2
+],
+[
+0,
+3
+],
+[
+0,
+3
+],
+[
+1,
+2
+]
+],
+0
+],
+"expected": [
+0,
+1,
+2,
+3
+],
+"hidden": false
+},
+{
+"args": [
+[
+[
+1
+],
+[
+0
+],
+[]
+],
+2
+],
+"expected": [
+2
+],
+"hidden": false
+},
+{
+"args": [
+[
+[]
+],
+0
+],
+"expected": [
+0
+],
+"hidden": true
+},
+{
+"args": [
+[
+[
+1,
+2
+],
+[
+2
+],
+[
+0
+]
+],
+0
+],
+"expected": [
+0,
+1,
+2
+],
+"hidden": true
+}
+]
+},
+{
+"id": "dfs-order",
+"title": "DFS traversal",
+"category": "Graphs",
+"difficulty": 2,
+"funcName": "dfs_order",
+"starter": "def dfs_order(adj, start):\n    pass\n",
+"prompt": "`adj` is an adjacency list (sorted neighbors). Return DFS preorder from `start`, visiting neighbors ascending.",
+"solution": "",
+"kcs": [
+{
+"slug": "graph/dfs",
+"weight": 1.0
+},
+{
+"slug": "graph/adjacency",
+"weight": 0.6
+}
+],
+"tests": [
+{
+"args": [
+[
+[
+1,
+2
+],
+[
+0,
+3
+],
+[
+0,
+3
+],
+[
+1,
+2
+]
+],
+0
+],
+"expected": [
+0,
+1,
+3,
+2
+],
+"hidden": false
+},
+{
+"args": [
+[
+[
+1
+],
+[
+0
+],
+[]
+],
+2
+],
+"expected": [
+2
+],
+"hidden": false
+},
+{
+"args": [
+[
+[]
+],
+0
+],
+"expected": [
+0
+],
+"hidden": true
+},
+{
+"args": [
+[
+[
+1,
+2
+],
+[
+2
+],
+[
+0
+]
+],
+0
+],
+"expected": [
+0,
+1,
+2
+],
+"hidden": true
+}
+]
+},
+{
+"id": "num-islands",
+"title": "Number of islands",
+"category": "Graphs",
+"difficulty": 3,
+"funcName": "num_islands",
+"starter": "def num_islands(grid):\n    pass\n",
+"prompt": "`grid` is a matrix of 0/1. Return the number of islands (4-directionally connected groups of 1s).",
+"solution": "",
+"kcs": [
+{
+"slug": "graph/grid",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+[
+1,
+1,
+0
+],
+[
+1,
+0,
+0
+],
+[
+0,
+0,
+1
+]
+]
+],
+"expected": 2,
+"hidden": false
+},
+{
+"args": [
+[
+[
+0
+]
+]
+],
+"expected": 0,
+"hidden": false
+},
+{
+"args": [
+[
+[
+1,
+1
+],
+[
+1,
+1
+]
+]
+],
+"expected": 1,
+"hidden": true
+},
+{
+"args": [
+[
+[
+1,
+0,
+1,
+0,
+1
+]
+]
+],
+"expected": 3,
+"hidden": true
+}
+]
+},
+{
+"id": "count-components",
+"title": "Connected components",
+"category": "Graphs",
+"difficulty": 2,
+"funcName": "count_components",
+"starter": "def count_components(n, edges):\n    pass\n",
+"prompt": "Given `n` nodes (0..n-1) and undirected `edges`, return the number of connected components.",
+"solution": "",
+"kcs": [
+{
+"slug": "graph/union-find",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+5,
+[
+[
+0,
+1
+],
+[
+1,
+2
+],
+[
+3,
+4
+]
+]
+],
+"expected": 2,
+"hidden": false
+},
+{
+"args": [
+5,
+[
+[
+0,
+1
+],
+[
+1,
+2
+],
+[
+2,
+3
+],
+[
+3,
+4
+]
+]
+],
+"expected": 1,
+"hidden": false
+},
+{
+"args": [
+3,
+[]
+],
+"expected": 3,
+"hidden": true
+},
+{
+"args": [
+4,
+[
+[
+0,
+1
+],
+[
+2,
+3
+],
+[
+1,
+3
+]
+]
+],
+"expected": 1,
+"hidden": true
+}
+]
+},
+{
+"id": "topo-sort",
+"title": "Topological order",
+"category": "Graphs",
+"difficulty": 3,
+"funcName": "topo_order",
+"starter": "def topo_order(n, edges):\n    pass\n",
+"prompt": "DAG with `n` nodes and directed `edges` [u, v] (u before v). Return a topological order; break ties by smallest node.",
+"solution": "",
+"kcs": [
+{
+"slug": "graph/topo-sort",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+4,
+[
+[
+0,
+1
+],
+[
+0,
+2
+],
+[
+1,
+3
+],
+[
+2,
+3
+]
+]
+],
+"expected": [
+0,
+1,
+2,
+3
+],
+"hidden": false
+},
+{
+"args": [
+2,
+[
+[
+1,
+0
+]
+]
+],
+"expected": [
+1,
+0
+],
+"hidden": false
+},
+{
+"args": [
+3,
+[]
+],
+"expected": [
+0,
+1,
+2
+],
+"hidden": true
+},
+{
+"args": [
+3,
+[
+[
+0,
+1
+],
+[
+1,
+2
+]
+]
+],
+"expected": [
+0,
+1,
+2
+],
+"hidden": true
+}
+]
+},
+{
+"id": "subsets",
+"title": "Subsets",
+"category": "Backtracking",
+"difficulty": 2,
+"funcName": "subsets",
+"starter": "def subsets(nums):\n    pass\n",
+"prompt": "Return all subsets of the distinct integers `nums`. Each subset sorted ascending; the list of subsets sorted.",
+"solution": "",
+"kcs": [
+{
+"slug": "backtracking/subsets",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+1,
+2,
+3
+]
+],
+"expected": [
+[],
+[
+1
+],
+[
+1,
+2
+],
+[
+1,
+2,
+3
+],
+[
+1,
+3
+],
+[
+2
+],
+[
+2,
+3
+],
+[
+3
+]
+],
+"hidden": false
+},
+{
+"args": [
+[
+0
+]
+],
+"expected": [
+[],
+[
+0
+]
+],
+"hidden": false
+},
+{
+"args": [
+[]
+],
+"expected": [
+[]
+],
+"hidden": true
+},
+{
+"args": [
+[
+1,
+2
+]
+],
+"expected": [
+[],
+[
+1
+],
+[
+1,
+2
+],
+[
+2
+]
+],
+"hidden": true
+}
+]
+},
+{
+"id": "permutations",
+"title": "Permutations",
+"category": "Backtracking",
+"difficulty": 2,
+"funcName": "permute",
+"starter": "def permute(nums):\n    pass\n",
+"prompt": "Return all permutations of the distinct integers `nums`. Return the list of permutations sorted.",
+"solution": "",
+"kcs": [
+{
+"slug": "backtracking/permute",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+1,
+2,
+3
+]
+],
+"expected": [
+[
+1,
+2,
+3
+],
+[
+1,
+3,
+2
+],
+[
+2,
+1,
+3
+],
+[
+2,
+3,
+1
+],
+[
+3,
+1,
+2
+],
+[
+3,
+2,
+1
+]
+],
+"hidden": false
+},
+{
+"args": [
+[
+0,
+1
+]
+],
+"expected": [
+[
+0,
+1
+],
+[
+1,
+0
+]
+],
+"hidden": false
+},
+{
+"args": [
+[
+1
+]
+],
+"expected": [
+[
+1
+]
+],
+"hidden": true
+},
+{
+"args": [
+[
+2,
+3,
+4
+]
+],
+"expected": [
+[
+2,
+3,
+4
+],
+[
+2,
+4,
+3
+],
+[
+3,
+2,
+4
+],
+[
+3,
+4,
+2
+],
+[
+4,
+2,
+3
+],
+[
+4,
+3,
+2
+]
+],
+"hidden": true
+}
+]
+},
+{
+"id": "combinations",
+"title": "Combinations",
+"category": "Backtracking",
+"difficulty": 2,
+"funcName": "combine",
+"starter": "def combine(n, k):\n    pass\n",
+"prompt": "Return all combinations of `k` numbers chosen from 1..n. Each combination ascending; the list sorted.",
+"solution": "",
+"kcs": [
+{
+"slug": "backtracking/combine",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+4,
+2
+],
+"expected": [
+[
+1,
+2
+],
+[
+1,
+3
+],
+[
+1,
+4
+],
+[
+2,
+3
+],
+[
+2,
+4
+],
+[
+3,
+4
+]
+],
+"hidden": false
+},
+{
+"args": [
+1,
+1
+],
+"expected": [
+[
+1
+]
+],
+"hidden": false
+},
+{
+"args": [
+3,
+3
+],
+"expected": [
+[
+1,
+2,
+3
+]
+],
+"hidden": true
+},
+{
+"args": [
+5,
+1
+],
+"expected": [
+[
+1
+],
+[
+2
+],
+[
+3
+],
+[
+4
+],
+[
+5
+]
+],
+"hidden": true
+}
+]
+},
+{
+"id": "combination-sum",
+"title": "Combination sum",
+"category": "Backtracking",
+"difficulty": 3,
+"funcName": "combination_sum",
+"starter": "def combination_sum(candidates, target):\n    pass\n",
+"prompt": "Return unique combinations of `candidates` (each usable unlimited times) that sum to `target`. Each combo sorted; list sorted.",
+"solution": "",
+"kcs": [
+{
+"slug": "backtracking/constraint",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+2,
+3,
+6,
+7
+],
+7
+],
+"expected": [
+[
+2,
+2,
+3
+],
+[
+7
+]
+],
+"hidden": false
+},
+{
+"args": [
+[
+2,
+3,
+5
+],
+8
+],
+"expected": [
+[
+2,
+2,
+2,
+2
+],
+[
+2,
+3,
+3
+],
+[
+3,
+5
+]
+],
+"hidden": false
+},
+{
+"args": [
+[
+2
+],
+1
+],
+"expected": [],
+"hidden": true
+},
+{
+"args": [
+[
+3,
+5
+],
+8
+],
+"expected": [
+[
+3,
+5
+]
+],
+"hidden": true
+}
+]
+},
+{
+"id": "generate-parens",
+"title": "Generate parentheses",
+"category": "Backtracking",
+"difficulty": 3,
+"funcName": "generate_parenthesis",
+"starter": "def generate_parenthesis(n):\n    pass\n",
+"prompt": "Return all well-formed parentheses strings using `n` pairs. Return the list sorted.",
+"solution": "",
+"kcs": [
+{
+"slug": "backtracking/constraint",
+"weight": 1.0
+},
+{
+"slug": "recursion/recursive-case",
+"weight": 0.5
+}
+],
+"tests": [
+{
+"args": [
+3
+],
+"expected": [
+"((()))",
+"(()())",
+"(())()",
+"()(())",
+"()()()"
+],
+"hidden": false
+},
+{
+"args": [
+1
+],
+"expected": [
+"()"
+],
+"hidden": false
+},
+{
+"args": [
+2
+],
+"expected": [
+"(())",
+"()()"
+],
+"hidden": true
+},
+{
+"args": [
+0
+],
+"expected": [
+""
+],
+"hidden": true
+}
+]
+},
+{
+"id": "best-time-stock",
+"title": "Best time to buy/sell",
+"category": "Greedy",
+"difficulty": 1,
+"funcName": "max_profit",
+"starter": "def max_profit(prices):\n    pass\n",
+"prompt": "Return the maximum profit from one buy then one later sell of `prices`, or 0.",
+"solution": "",
+"kcs": [
+{
+"slug": "greedy/reach",
+"weight": 1.0
+},
+{
+"slug": "arrays/iterate",
+"weight": 0.4
+}
+],
+"tests": [
+{
+"args": [
+[
+7,
+1,
+5,
+3,
+6,
+4
+]
+],
+"expected": 5,
+"hidden": false
+},
+{
+"args": [
+[
+7,
+6,
+4,
+3,
+1
+]
+],
+"expected": 0,
+"hidden": false
+},
+{
+"args": [
+[
+1
+]
+],
+"expected": 0,
+"hidden": true
+},
+{
+"args": [
+[
+2,
+4,
+1,
+7
+]
+],
+"expected": 6,
+"hidden": true
+}
+]
+},
+{
+"id": "jump-game",
+"title": "Jump game",
+"category": "Greedy",
+"difficulty": 2,
+"funcName": "can_jump",
+"starter": "def can_jump(nums):\n    pass\n",
+"prompt": "Each value is the max jump length from that index. Return True if you can reach the last index.",
+"solution": "",
+"kcs": [
+{
+"slug": "greedy/reach",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+2,
+3,
+1,
+1,
+4
+]
+],
+"expected": true,
+"hidden": false
+},
+{
+"args": [
+[
+3,
+2,
+1,
+0,
+4
+]
+],
+"expected": false,
+"hidden": false
+},
+{
+"args": [
+[
+0
+]
+],
+"expected": true,
+"hidden": true
+},
+{
+"args": [
+[
+2,
+0,
+0
+]
+],
+"expected": true,
+"hidden": true
+}
+]
+},
+{
+"id": "merge-intervals",
+"title": "Merge intervals",
+"category": "Intervals",
+"difficulty": 2,
+"funcName": "merge_intervals",
+"starter": "def merge_intervals(intervals):\n    pass\n",
+"prompt": "Merge all overlapping intervals `[start, end]` and return the sorted list of merged intervals.",
+"solution": "",
+"kcs": [
+{
+"slug": "intervals/merge",
+"weight": 1.0
+},
+{
+"slug": "greedy/sorting",
+"weight": 0.5
+}
+],
+"tests": [
+{
+"args": [
+[
+[
+1,
+3
+],
+[
+2,
+6
+],
+[
+8,
+10
+],
+[
+15,
+18
+]
+]
+],
+"expected": [
+[
+1,
+6
+],
+[
+8,
+10
+],
+[
+15,
+18
+]
+],
+"hidden": false
+},
+{
+"args": [
+[
+[
+1,
+4
+],
+[
+4,
+5
+]
+]
+],
+"expected": [
+[
+1,
+5
+]
+],
+"hidden": false
+},
+{
+"args": [
+[
+[
+1,
+4
+]
+]
+],
+"expected": [
+[
+1,
+4
+]
+],
+"hidden": true
+},
+{
+"args": [
+[
+[
+1,
+4
+],
+[
+2,
+3
+]
+]
+],
+"expected": [
+[
+1,
+4
+]
+],
+"hidden": true
+}
+]
+},
+{
+"id": "min-rooms",
+"title": "Minimum meeting rooms",
+"category": "Intervals",
+"difficulty": 3,
+"funcName": "min_meeting_rooms",
+"starter": "def min_meeting_rooms(intervals):\n    pass\n",
+"prompt": "Given meeting intervals `[start, end]`, return the minimum number of rooms required.",
+"solution": "",
+"kcs": [
+{
+"slug": "intervals/schedule",
+"weight": 1.0
+},
+{
+"slug": "heap/top-k",
+"weight": 0.4
+}
+],
+"tests": [
+{
+"args": [
+[
+[
+0,
+30
+],
+[
+5,
+10
+],
+[
+15,
+20
+]
+]
+],
+"expected": 2,
+"hidden": false
+},
+{
+"args": [
+[
+[
+7,
+10
+],
+[
+2,
+4
+]
+]
+],
+"expected": 1,
+"hidden": false
+},
+{
+"args": [
+[]
+],
+"expected": 0,
+"hidden": true
+},
+{
+"args": [
+[
+[
+1,
+5
+],
+[
+2,
+6
+],
+[
+3,
+7
+]
+]
+],
+"expected": 3,
+"hidden": true
+}
+]
+},
+{
+"id": "climb-stairs",
+"title": "Climbing stairs",
+"category": "DP 1D",
+"difficulty": 2,
+"funcName": "climb_stairs",
+"starter": "def climb_stairs(n):\n    pass\n",
+"prompt": "Climb `n` steps taking 1 or 2 at a time. Return the number of distinct ways.",
+"solution": "def climb_stairs(n):\n    a, b = 1, 1\n    for _ in range(n):\n        a, b = b, a + b\n    return a\n",
+"kcs": [
+{
+"slug": "dp/1d-linear",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+2
+],
+"expected": 2,
+"hidden": false
+},
+{
+"args": [
+3
+],
+"expected": 3,
+"hidden": false
+},
+{
+"args": [
+5
+],
+"expected": 8,
+"hidden": true
+},
+{
+"args": [
+1
+],
+"expected": 1,
+"hidden": true
+}
+]
+},
+{
+"id": "house-robber",
+"title": "House robber",
+"category": "DP 1D",
+"difficulty": 2,
+"funcName": "rob",
+"starter": "def rob(nums):\n    pass\n",
+"prompt": "You cannot rob two adjacent houses. Return the maximum money from `nums`.",
+"solution": "def rob(nums):\n    prev = cur = 0\n    for n in nums:\n        prev, cur = cur, max(cur, prev + n)\n    return cur\n",
+"kcs": [
+{
+"slug": "dp/1d-choice",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+1,
+2,
+3,
+1
+]
+],
+"expected": 4,
+"hidden": false
+},
+{
+"args": [
+[
+2,
+7,
+9,
+3,
+1
+]
+],
+"expected": 12,
+"hidden": false
+},
+{
+"args": [
+[]
+],
+"expected": 0,
+"hidden": true
+},
+{
+"args": [
+[
+5
+]
+],
+"expected": 5,
+"hidden": true
+}
+]
+},
+{
+"id": "coin-change",
+"title": "Coin change",
+"category": "DP 1D",
+"difficulty": 3,
+"funcName": "coin_change",
+"starter": "def coin_change(coins, amount):\n    pass\n",
+"prompt": "Return the fewest number of `coins` summing to `amount`, or -1 if impossible.",
+"solution": "",
+"kcs": [
+{
+"slug": "dp/1d-choice",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+1,
+2,
+5
+],
+11
+],
+"expected": 3,
+"hidden": false
+},
+{
+"args": [
+[
+2
+],
+3
+],
+"expected": -1,
+"hidden": false
+},
+{
+"args": [
+[
+1
+],
+0
+],
+"expected": 0,
+"hidden": true
+},
+{
+"args": [
+[
+2,
+5,
+10
+],
+27
+],
+"expected": 4,
+"hidden": true
+}
+]
+},
+{
+"id": "lis",
+"title": "Longest increasing subsequence",
+"category": "DP 1D",
+"difficulty": 3,
+"funcName": "length_of_lis",
+"starter": "def length_of_lis(nums):\n    pass\n",
+"prompt": "Return the length of the longest strictly increasing subsequence of `nums`.",
+"solution": "",
+"kcs": [
+{
+"slug": "dp/subsequence",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+10,
+9,
+2,
+5,
+3,
+7,
+101,
+18
+]
+],
+"expected": 4,
+"hidden": false
+},
+{
+"args": [
+[
+0,
+1,
+0,
+3,
+2,
+3
+]
+],
+"expected": 4,
+"hidden": false
+},
+{
+"args": [
+[
+7,
+7,
+7
+]
+],
+"expected": 1,
+"hidden": true
+},
+{
+"args": [
+[
+4,
+10,
+4,
+3,
+8,
+9
+]
+],
+"expected": 3,
+"hidden": true
+}
+]
+},
+{
+"id": "word-break",
+"title": "Word break",
+"category": "DP 1D",
+"difficulty": 3,
+"funcName": "word_break",
+"starter": "def word_break(s, words):\n    pass\n",
+"prompt": "Return True if `s` can be segmented into a space-separated sequence of words from `words`.",
+"solution": "",
+"kcs": [
+{
+"slug": "dp/partition",
+"weight": 1.0
+},
+{
+"slug": "hashing/set-dedup",
+"weight": 0.4
+}
+],
+"tests": [
+{
+"args": [
+"leetcode",
+[
+"leet",
+"code"
+]
+],
+"expected": true,
+"hidden": false
+},
+{
+"args": [
+"applepenapple",
+[
+"apple",
+"pen"
+]
+],
+"expected": true,
+"hidden": false
+},
+{
+"args": [
+"catsandog",
+[
+"cats",
+"dog",
+"sand",
+"and",
+"cat"
+]
+],
+"expected": false,
+"hidden": true
+},
+{
+"args": [
+"a",
+[
+"a"
+]
+],
+"expected": true,
+"hidden": true
+}
+]
+},
+{
+"id": "unique-paths",
+"title": "Unique paths",
+"category": "DP 2D",
+"difficulty": 2,
+"funcName": "unique_paths",
+"starter": "def unique_paths(m, n):\n    pass\n",
+"prompt": "Return the number of distinct paths from top-left to bottom-right of an `m` x `n` grid moving only right or down.",
+"solution": "",
+"kcs": [
+{
+"slug": "dp/grid",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+3,
+7
+],
+"expected": 28,
+"hidden": false
+},
+{
+"args": [
+3,
+2
+],
+"expected": 3,
+"hidden": false
+},
+{
+"args": [
+1,
+1
+],
+"expected": 1,
+"hidden": true
+},
+{
+"args": [
+4,
+4
+],
+"expected": 20,
+"hidden": true
+}
+]
+},
+{
+"id": "min-path-sum",
+"title": "Minimum path sum",
+"category": "DP 2D",
+"difficulty": 2,
+"funcName": "min_path_sum",
+"starter": "def min_path_sum(grid):\n    pass\n",
+"prompt": "Return the minimum sum path from top-left to bottom-right of `grid`, moving right or down.",
+"solution": "",
+"kcs": [
+{
+"slug": "dp/grid",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+[
+1,
+3,
+1
+],
+[
+1,
+5,
+1
+],
+[
+4,
+2,
+1
+]
+]
+],
+"expected": 7,
+"hidden": false
+},
+{
+"args": [
+[
+[
+1,
+2,
+3
+],
+[
+4,
+5,
+6
+]
+]
+],
+"expected": 12,
+"hidden": false
+},
+{
+"args": [
+[
+[
+5
+]
+]
+],
+"expected": 5,
+"hidden": true
+},
+{
+"args": [
+[
+[
+1,
+2
+],
+[
+1,
+1
+]
+]
+],
+"expected": 3,
+"hidden": true
+}
+]
+},
+{
+"id": "lcs",
+"title": "Longest common subsequence",
+"category": "DP 2D",
+"difficulty": 3,
+"funcName": "lcs",
+"starter": "def lcs(a, b):\n    pass\n",
+"prompt": "Return the length of the longest common subsequence of strings `a` and `b`.",
+"solution": "",
+"kcs": [
+{
+"slug": "dp/two-seq",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+"abcde",
+"ace"
+],
+"expected": 3,
+"hidden": false
+},
+{
+"args": [
+"abc",
+"abc"
+],
+"expected": 3,
+"hidden": false
+},
+{
+"args": [
+"abc",
+"def"
+],
+"expected": 0,
+"hidden": true
+},
+{
+"args": [
+"bsbininm",
+"jmjkbkjkv"
+],
+"expected": 1,
+"hidden": true
+}
+]
+},
+{
+"id": "edit-distance",
+"title": "Edit distance",
+"category": "DP 2D",
+"difficulty": 4,
+"funcName": "edit_distance",
+"starter": "def edit_distance(a, b):\n    pass\n",
+"prompt": "Return the minimum number of single-character insert/delete/replace edits to turn `a` into `b`.",
+"solution": "",
+"kcs": [
+{
+"slug": "dp/two-seq",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+"horse",
+"ros"
+],
+"expected": 3,
+"hidden": false
+},
+{
+"args": [
+"intention",
+"execution"
+],
+"expected": 5,
+"hidden": false
+},
+{
+"args": [
+"",
+"abc"
+],
+"expected": 3,
+"hidden": true
+},
+{
+"args": [
+"abc",
+"abc"
+],
+"expected": 0,
+"hidden": true
+}
+]
+},
+{
+"id": "knapsack",
+"title": "0/1 knapsack",
+"category": "DP 2D",
+"difficulty": 4,
+"funcName": "knapsack",
+"starter": "def knapsack(weights, values, cap):\n    pass\n",
+"prompt": "Each item has a weight and value. Return the max total value with total weight <= `cap`, each item used at most once.",
+"solution": "",
+"kcs": [
+{
+"slug": "dp/knapsack",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+1,
+3,
+4,
+5
+],
+[
+1,
+4,
+5,
+7
+],
+7
+],
+"expected": 9,
+"hidden": false
+},
+{
+"args": [
+[
+2,
+2,
+3
+],
+[
+3,
+3,
+5
+],
+4
+],
+"expected": 6,
+"hidden": false
+},
+{
+"args": [
+[
+5
+],
+[
+10
+],
+4
+],
+"expected": 0,
+"hidden": true
+},
+{
+"args": [
+[
+1,
+2,
+3
+],
+[
+6,
+10,
+12
+],
+5
+],
+"expected": 22,
+"hidden": true
+}
+]
+},
+{
+"id": "single-number",
+"title": "Single number",
+"category": "Bit",
+"difficulty": 1,
+"funcName": "single_number",
+"starter": "def single_number(nums):\n    pass\n",
+"prompt": "Every element appears twice except one. Return the single one using XOR.",
+"solution": "def single_number(nums):\n    r = 0\n    for x in nums:\n        r ^= x\n    return r\n",
+"kcs": [
+{
+"slug": "bit/xor",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+[
+2,
+2,
+1
+]
+],
+"expected": 1,
+"hidden": false
+},
+{
+"args": [
+[
+4,
+1,
+2,
+1,
+2
+]
+],
+"expected": 4,
+"hidden": false
+},
+{
+"args": [
+[
+1
+]
+],
+"expected": 1,
+"hidden": true
+},
+{
+"args": [
+[
+7,
+3,
+7
+]
+],
+"expected": 3,
+"hidden": true
+}
+]
+},
+{
+"id": "count-bits",
+"title": "Counting bits",
+"category": "Bit",
+"difficulty": 1,
+"funcName": "count_bits",
+"starter": "def count_bits(n):\n    pass\n",
+"prompt": "Return a list ans of length n+1 where ans[i] is the number of set bits in i.",
+"solution": "",
+"kcs": [
+{
+"slug": "bit/count",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+2
+],
+"expected": [
+0,
+1,
+1
+],
+"hidden": false
+},
+{
+"args": [
+5
+],
+"expected": [
+0,
+1,
+1,
+2,
+1,
+2
+],
+"hidden": false
+},
+{
+"args": [
+0
+],
+"expected": [
+0
+],
+"hidden": true
+},
+{
+"args": [
+8
+],
+"expected": [
+0,
+1,
+1,
+2,
+1,
+2,
+2,
+3,
+1
+],
+"hidden": true
+}
+]
+},
+{
+"id": "missing-number",
+"title": "Missing number",
+"category": "Bit",
+"difficulty": 1,
+"funcName": "missing_number",
+"starter": "def missing_number(nums):\n    pass\n",
+"prompt": "`nums` contains n distinct numbers from 0..n with one missing. Return the missing number.",
+"solution": "",
+"kcs": [
+{
+"slug": "bit/xor",
+"weight": 1.0
+},
+{
+"slug": "math/digits",
+"weight": 0.3
+}
+],
+"tests": [
+{
+"args": [
+[
+3,
+0,
+1
+]
+],
+"expected": 2,
+"hidden": false
+},
+{
+"args": [
+[
+0,
+1
+]
+],
+"expected": 2,
+"hidden": false
+},
+{
+"args": [
+[
+9,
+6,
+4,
+2,
+3,
+5,
+7,
+0,
+1
+]
+],
+"expected": 8,
+"hidden": true
+},
+{
+"args": [
+[
+0
+]
+],
+"expected": 1,
+"hidden": true
+}
+]
+},
+{
+"id": "gcd",
+"title": "Greatest common divisor",
+"category": "Math",
+"difficulty": 1,
+"funcName": "compute_gcd",
+"starter": "def compute_gcd(a, b):\n    pass\n",
+"prompt": "Return the greatest common divisor of `a` and `b` (Euclid).",
+"solution": "",
+"kcs": [
+{
+"slug": "math/gcd",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+12,
+18
+],
+"expected": 6,
+"hidden": false
+},
+{
+"args": [
+7,
+1
+],
+"expected": 1,
+"hidden": false
+},
+{
+"args": [
+100,
+75
+],
+"expected": 25,
+"hidden": true
+},
+{
+"args": [
+17,
+5
+],
+"expected": 1,
+"hidden": true
+}
+]
+},
+{
+"id": "count-primes",
+"title": "Count primes",
+"category": "Math",
+"difficulty": 2,
+"funcName": "count_primes",
+"starter": "def count_primes(n):\n    pass\n",
+"prompt": "Return the number of primes strictly less than `n` (sieve of Eratosthenes).",
+"solution": "",
+"kcs": [
+{
+"slug": "math/primes",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+10
+],
+"expected": 4,
+"hidden": false
+},
+{
+"args": [
+0
+],
+"expected": 0,
+"hidden": false
+},
+{
+"args": [
+2
+],
+"expected": 0,
+"hidden": true
+},
+{
+"args": [
+50
+],
+"expected": 15,
+"hidden": true
+}
+]
+},
+{
+"id": "fizzbuzz",
+"title": "Fizz buzz",
+"category": "Math",
+"difficulty": 1,
+"funcName": "fizz_buzz",
+"starter": "def fizz_buzz(n):\n    pass\n",
+"prompt": "Return the Fizz Buzz sequence 1..n: 'Fizz' for multiples of 3, 'Buzz' for 5, 'FizzBuzz' for both, else the number as a string.",
+"solution": "def fizz_buzz(n):\n    out = []\n    for i in range(1, n + 1):\n        if i % 15 == 0:\n            out.append('FizzBuzz')\n        elif i % 3 == 0:\n            out.append('Fizz')\n        elif i % 5 == 0:\n            out.append('Buzz')\n        else:\n            out.append(str(i))\n    return out\n",
+"kcs": [
+{
+"slug": "math/modular",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+3
+],
+"expected": [
+"1",
+"2",
+"Fizz"
+],
+"hidden": false
+},
+{
+"args": [
+5
+],
+"expected": [
+"1",
+"2",
+"Fizz",
+"4",
+"Buzz"
+],
+"hidden": false
+},
+{
+"args": [
+15
+],
+"expected": [
+"1",
+"2",
+"Fizz",
+"4",
+"Buzz",
+"Fizz",
+"7",
+"8",
+"Fizz",
+"Buzz",
+"11",
+"Fizz",
+"13",
+"14",
+"FizzBuzz"
+],
+"hidden": true
+},
+{
+"args": [
+1
+],
+"expected": [
+"1"
+],
+"hidden": true
+}
+]
+},
+{
+"id": "reverse-integer",
+"title": "Reverse integer",
+"category": "Math",
+"difficulty": 2,
+"funcName": "reverse_int",
+"starter": "def reverse_int(x):\n    pass\n",
+"prompt": "Reverse the digits of signed 32-bit integer `x`. Return 0 if the result overflows the 32-bit range.",
+"solution": "",
+"kcs": [
+{
+"slug": "math/digits",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+123
+],
+"expected": 321,
+"hidden": false
+},
+{
+"args": [
+-123
+],
+"expected": -321,
+"hidden": false
+},
+{
+"args": [
+120
+],
+"expected": 21,
+"hidden": true
+},
+{
+"args": [
+1534236469
+],
+"expected": 0,
+"hidden": true
+}
+]
+},
+{
+"id": "prefix-count",
+"title": "Prefix counts",
+"category": "Trie",
+"difficulty": 3,
+"funcName": "prefix_counts",
+"starter": "def prefix_counts(words, queries):\n    pass\n",
+"prompt": "For each prefix in `queries`, return how many of `words` start with it. Return the list of counts.",
+"solution": "",
+"kcs": [
+{
+"slug": "trie/prefix",
+"weight": 1.0
+},
+{
+"slug": "hashing/lookup",
+"weight": 0.4
+}
+],
+"tests": [
+{
+"args": [
+[
+"apple",
+"app",
+"apricot",
+"banana"
+],
+[
+"app",
+"ap",
+"b",
+"c"
+]
+],
+"expected": [
+2,
+3,
+1,
+0
+],
+"hidden": false
+},
+{
+"args": [
+[
+"a"
+],
+[
+"a",
+"b"
+]
+],
+"expected": [
+1,
+0
+],
+"hidden": false
+},
+{
+"args": [
+[
+"x",
+"xy",
+"xyz"
+],
+[
+"xy"
+]
+],
+"expected": [
+2
+],
+"hidden": true
+},
+{
+"args": [
+[],
+[
+"a"
+]
+],
+"expected": [
+0
+],
+"hidden": true
+}
+]
+},
+{
+"id": "factorial",
+"title": "Factorial",
+"category": "Recursion",
+"difficulty": 1,
+"funcName": "factorial",
+"starter": "def factorial(n):\n    pass\n",
+"prompt": "Return n! computed recursively. 0! = 1.",
+"solution": "",
+"kcs": [
+{
+"slug": "recursion/base-case",
+"weight": 1.0
+},
+{
+"slug": "recursion/recursive-case",
+"weight": 0.6
+}
+],
+"tests": [
+{
+"args": [
+0
+],
+"expected": 1,
+"hidden": false
+},
+{
+"args": [
+1
+],
+"expected": 1,
+"hidden": false
+},
+{
+"args": [
+5
+],
+"expected": 120,
+"hidden": true
+},
+{
+"args": [
+10
+],
+"expected": 3628800,
+"hidden": true
+}
+]
+},
+{
+"id": "fib",
+"title": "Fibonacci",
+"category": "Recursion",
+"difficulty": 1,
+"funcName": "fib",
+"starter": "def fib(n):\n    pass\n",
+"prompt": "Return the n-th Fibonacci number (fib(0)=0, fib(1)=1).",
+"solution": "",
+"kcs": [
+{
+"slug": "recursion/recursive-case",
+"weight": 1.0
+},
+{
+"slug": "dp/1d-linear",
+"weight": 0.5
+}
+],
+"tests": [
+{
+"args": [
+2
+],
+"expected": 1,
+"hidden": false
+},
+{
+"args": [
+5
+],
+"expected": 5,
+"hidden": false
+},
+{
+"args": [
+10
+],
+"expected": 55,
+"hidden": true
+},
+{
+"args": [
+0
+],
+"expected": 0,
+"hidden": true
+}
+]
+},
+{
+"id": "pow-int",
+"title": "Power (integer)",
+"category": "Recursion",
+"difficulty": 2,
+"funcName": "power",
+"starter": "def power(base, exp):\n    pass\n",
+"prompt": "Return base raised to a non-negative integer `exp`, using fast (divide and conquer) exponentiation.",
+"solution": "",
+"kcs": [
+{
+"slug": "recursion/divide",
+"weight": 1.0
+}
+],
+"tests": [
+{
+"args": [
+2,
+10
+],
+"expected": 1024,
+"hidden": false
+},
+{
+"args": [
+3,
+0
+],
+"expected": 1,
+"hidden": false
+},
+{
+"args": [
+5,
+3
+],
+"expected": 125,
+"hidden": true
+},
+{
+"args": [
+2,
+1
+],
+"expected": 2,
+"hidden": true
+}
+]
+}
+]

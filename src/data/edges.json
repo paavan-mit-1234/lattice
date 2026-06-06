@@ -1,0 +1,306 @@
+[
+{
+"from": "arrays/iterate",
+"to": "arrays/prefix-sum"
+},
+{
+"from": "arrays/iterate",
+"to": "arrays/kadane"
+},
+{
+"from": "arrays/indexing",
+"to": "arrays/in-place"
+},
+{
+"from": "arrays/iterate",
+"to": "hashing/frequency"
+},
+{
+"from": "arrays/iterate",
+"to": "hashing/lookup"
+},
+{
+"from": "hashing/lookup",
+"to": "hashing/set-dedup"
+},
+{
+"from": "hashing/frequency",
+"to": "hashing/grouping"
+},
+{
+"from": "strings/traverse",
+"to": "strings/palindrome"
+},
+{
+"from": "strings/traverse",
+"to": "strings/build"
+},
+{
+"from": "strings/build",
+"to": "strings/parsing"
+},
+{
+"from": "arrays/indexing",
+"to": "two-pointers/convergent"
+},
+{
+"from": "two-pointers/convergent",
+"to": "two-pointers/partition"
+},
+{
+"from": "two-pointers/convergent",
+"to": "two-pointers/fast-slow"
+},
+{
+"from": "arrays/iterate",
+"to": "sliding-window/fixed"
+},
+{
+"from": "sliding-window/fixed",
+"to": "sliding-window/expand"
+},
+{
+"from": "sliding-window/expand",
+"to": "sliding-window/shrink"
+},
+{
+"from": "hashing/frequency",
+"to": "sliding-window/distinct"
+},
+{
+"from": "sliding-window/shrink",
+"to": "sliding-window/distinct"
+},
+{
+"from": "arrays/indexing",
+"to": "binary-search/boundary"
+},
+{
+"from": "binary-search/boundary",
+"to": "binary-search/insert"
+},
+{
+"from": "binary-search/boundary",
+"to": "binary-search/on-answer"
+},
+{
+"from": "binary-search/boundary",
+"to": "binary-search/rotated"
+},
+{
+"from": "arrays/iterate",
+"to": "stack/lifo"
+},
+{
+"from": "stack/lifo",
+"to": "stack/expression"
+},
+{
+"from": "stack/lifo",
+"to": "stack/monotonic"
+},
+{
+"from": "arrays/iterate",
+"to": "queue/fifo"
+},
+{
+"from": "queue/fifo",
+"to": "queue/monotonic"
+},
+{
+"from": "stack/monotonic",
+"to": "queue/monotonic"
+},
+{
+"from": "arrays/iterate",
+"to": "linked-list/traverse"
+},
+{
+"from": "linked-list/traverse",
+"to": "linked-list/two-pointer"
+},
+{
+"from": "two-pointers/fast-slow",
+"to": "linked-list/two-pointer"
+},
+{
+"from": "linked-list/traverse",
+"to": "linked-list/merge"
+},
+{
+"from": "recursion/recursive-case",
+"to": "trees/dfs"
+},
+{
+"from": "trees/dfs",
+"to": "trees/bfs"
+},
+{
+"from": "queue/fifo",
+"to": "trees/bfs"
+},
+{
+"from": "trees/dfs",
+"to": "trees/bst"
+},
+{
+"from": "binary-search/boundary",
+"to": "trees/bst"
+},
+{
+"from": "trees/dfs",
+"to": "trees/path"
+},
+{
+"from": "hashing/frequency",
+"to": "heap/top-k"
+},
+{
+"from": "heap/top-k",
+"to": "heap/k-way"
+},
+{
+"from": "linked-list/merge",
+"to": "heap/k-way"
+},
+{
+"from": "arrays/iterate",
+"to": "graph/adjacency"
+},
+{
+"from": "graph/adjacency",
+"to": "graph/bfs"
+},
+{
+"from": "graph/adjacency",
+"to": "graph/dfs"
+},
+{
+"from": "queue/fifo",
+"to": "graph/bfs"
+},
+{
+"from": "recursion/recursive-case",
+"to": "graph/dfs"
+},
+{
+"from": "graph/bfs",
+"to": "graph/grid"
+},
+{
+"from": "graph/dfs",
+"to": "graph/union-find"
+},
+{
+"from": "graph/dfs",
+"to": "graph/topo-sort"
+},
+{
+"from": "recursion/recursive-case",
+"to": "backtracking/subsets"
+},
+{
+"from": "backtracking/subsets",
+"to": "backtracking/permute"
+},
+{
+"from": "backtracking/subsets",
+"to": "backtracking/combine"
+},
+{
+"from": "backtracking/combine",
+"to": "backtracking/constraint"
+},
+{
+"from": "graph/dfs",
+"to": "backtracking/constraint"
+},
+{
+"from": "arrays/iterate",
+"to": "greedy/sorting"
+},
+{
+"from": "greedy/sorting",
+"to": "greedy/reach"
+},
+{
+"from": "greedy/sorting",
+"to": "intervals/merge"
+},
+{
+"from": "intervals/merge",
+"to": "intervals/schedule"
+},
+{
+"from": "recursion/recursive-case",
+"to": "dp/1d-linear"
+},
+{
+"from": "dp/1d-linear",
+"to": "dp/1d-choice"
+},
+{
+"from": "dp/1d-linear",
+"to": "dp/subsequence"
+},
+{
+"from": "dp/1d-choice",
+"to": "dp/partition"
+},
+{
+"from": "dp/1d-choice",
+"to": "dp/knapsack"
+},
+{
+"from": "dp/1d-linear",
+"to": "dp/grid"
+},
+{
+"from": "dp/subsequence",
+"to": "dp/two-seq"
+},
+{
+"from": "dp/grid",
+"to": "dp/two-seq"
+},
+{
+"from": "bit/basics",
+"to": "bit/xor"
+},
+{
+"from": "bit/basics",
+"to": "bit/count"
+},
+{
+"from": "math/digits",
+"to": "math/gcd"
+},
+{
+"from": "math/gcd",
+"to": "math/modular"
+},
+{
+"from": "math/primes",
+"to": "math/modular"
+},
+{
+"from": "hashing/lookup",
+"to": "trie/prefix"
+},
+{
+"from": "recursion/recursive-case",
+"to": "trie/prefix"
+},
+{
+"from": "recursion/base-case",
+"to": "recursion/recursive-case"
+},
+{
+"from": "recursion/recursive-case",
+"to": "recursion/divide"
+},
+{
+"from": "binary-search/boundary",
+"to": "recursion/divide"
+}
+]
